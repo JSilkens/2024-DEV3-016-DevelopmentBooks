@@ -149,10 +149,6 @@
                 <maven.tomcat.scope>provided</maven.tomcat.scope>
                 <maven.logback.scope>compile</maven.logback.scope>
                 <spring.active.profile>local</spring.active.profile>
-                <liquibase.dataSource.jdbcURL>jdbc:postgresql://localhost:5432/Libris_books
-                </liquibase.dataSource.jdbcURL>
-                <liquibase.dataSource.user>postgres</liquibase.dataSource.user>
-                <liquibase.dataSource.password>libris</liquibase.dataSource.password>
             </properties>
         </profile>
     </profiles>
