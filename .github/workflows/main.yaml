@@ -1,7 +1,7 @@
-name: Build and Test Spring Boot App (PR)
+name: Build and Test Spring Boot App (main)
 
 on:
-  pull_request:
+  push:
     branches:
       - main
 
