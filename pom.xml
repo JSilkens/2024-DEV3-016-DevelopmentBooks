@@ -8,47 +8,52 @@
         <version>3.3.5</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>be.jsilkens</groupId>
-    <artifactId>DevelopmentBooks</artifactId>
+
+    <groupId>be.jsilkens.devbooks</groupId>
+    <artifactId>backend-root</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>DevelopmentBooks</name>
-    <description>DevelopmentBooks</description>
-    <url/>
-    <licenses>
-        <license/>
-    </licenses>
-    <developers>
-        <developer/>
-    </developers>
-    <scm>
-        <connection/>
-        <developerConnection/>
-        <tag/>
-        <url/>
-    </scm>
+    <packaging>pom</packaging>
+    <name>backend-root</name>
+    <description>Development Books backend</description>
+
+    <modules>
+        <module>devbooks-domain</module>
+        <module>devbooks-usecase</module>
+        <module>devbooks-adapter</module>
+        <module>application</module>
+    </modules>
+
     <properties>
         <java.version>21</java.version>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-    <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter</artifactId>
-        </dependency>
 
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-    </dependencies>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
-
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>be.jsilkens.devbooks</groupId>
+                <artifactId>devbooks-adapter</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>be.jsilkens.devbooks</groupId>
+                <artifactId>devbooks-domain</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>be.jsilkens.devbooks</groupId>
+                <artifactId>devbooks-usecase</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>be.jsilkens.devbooks</groupId>
+                <artifactId>devbooks-domain</artifactId>
+                <version>${project.version}</version>
+                <classifier>tests</classifier>
+                <scope>test</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 </project>

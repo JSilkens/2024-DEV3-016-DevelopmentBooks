@@ -1,0 +1,39 @@
+openapi: 3.0.1
+info:
+  title: Development books API
+  version: 1.0.0
+servers:
+  - url: 'http://localhost:8080'
+paths:
+  /placeholder:
+    get:
+      summary: Placeholder GET operation
+      operationId: placeholderGet
+      responses:
+        '200':
+          description: Successful response
+
+    post:
+      summary: Placeholder POST operation
+      operationId: placeholderPost
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                exampleField:
+                  type: string
+      responses:
+        '201':
+          description: Created
+
+components:
+  schemas:
+    Example:
+      type: object
+      properties:
+        placeholderField:
+          type: string
+          example: "This is a placeholder field."
